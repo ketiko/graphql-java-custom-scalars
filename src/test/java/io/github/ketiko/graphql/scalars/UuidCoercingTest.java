@@ -17,7 +17,7 @@ public class UuidCoercingTest {
     @Test
     public void serialize_whenObjectIsUuidString_returnsStringValue() {
       Object input = UUID.randomUUID().toString();
-      var output = coercing.serialize(input);
+      String output = coercing.serialize(input);
       assertEquals(output, input);
     }
 
@@ -34,7 +34,7 @@ public class UuidCoercingTest {
     @Test
     public void serialize_whenObjectIsUuid_returnsStringValue() {
       Object input = UUID.randomUUID();
-      var output = coercing.serialize(input);
+      String output = coercing.serialize(input);
       assertEquals(output, input.toString());
     }
 
@@ -51,7 +51,7 @@ public class UuidCoercingTest {
     @Test
     public void parseValue_whenObjectIsUuidString_returnsUuidValue() {
       Object input = UUID.randomUUID();
-      var output = coercing.parseValue(input.toString());
+      UUID output = coercing.parseValue(input.toString());
       assertEquals(output, input);
     }
 
@@ -68,7 +68,7 @@ public class UuidCoercingTest {
     @Test
     public void parseValue_whenObjectIsUuid_returnsUuidValue() {
       Object input = UUID.randomUUID();
-      var output = coercing.parseValue(input);
+      UUID output = coercing.parseValue(input);
       assertEquals(output, input);
     }
 
@@ -94,15 +94,15 @@ public class UuidCoercingTest {
 
     @Test
     public void parseLiteral_whenValidUuidAsStringValueType_returnsUuidValue() {
-      var uuid = UUID.randomUUID();
-      var input = new StringValue(uuid.toString());
-      var output = coercing.parseLiteral(input);
+      UUID uuid = UUID.randomUUID();
+      StringValue input = new StringValue(uuid.toString());
+      UUID output = coercing.parseLiteral(input);
       assertEquals(output, uuid);
     }
 
     @Test
     public void parseLiteral_whenNonValidUuidAsStringValueType_throwsError() {
-      var input = new StringValue("random string");
+      StringValue input = new StringValue("random string");
       assertThrows(
         CoercingParseLiteralException.class,
         () -> {
