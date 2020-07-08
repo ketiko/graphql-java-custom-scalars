@@ -2,7 +2,7 @@ package io.github.ketiko.graphql.scalars;
 
 import graphql.schema.GraphQLScalarType;
 
-/** Provides central place for available custom scalars */
+/** Provides central place for available custom scalars. */
 public class CustomScalars {
 
   /**
@@ -13,9 +13,7 @@ public class CustomScalars {
    * graphql.schema.Coercing#parseValue(java.lang.Object)} methods accept formatted UUID strings as
    * valid objects.
    *
-   * <p>
-   *
-   * @see java.util.UUID
+   * <p>@see java.util.UUID
    */
   public static final GraphQLScalarType Uuid =
       GraphQLScalarType.newScalar()

@@ -7,7 +7,9 @@ import graphql.schema.CoercingParseValueException;
 import graphql.schema.CoercingSerializeException;
 import java.util.UUID;
 
-/** Access this via {@link io.github.ketiko.graphql.scalars.CustomScalars#Uuid} */
+/**
+ * Access this via {@link io.github.ketiko.graphql.scalars.CustomScalars#Uuid}.
+ *  */
 public class UuidCoercing implements Coercing<UUID, String> {
 
   @Override
