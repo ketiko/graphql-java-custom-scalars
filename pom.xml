@@ -16,10 +16,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-    <junit.jupiter.version>5.6.2</junit.jupiter.version>
+
+    <codacy-maven-plugin.version>1.2.0</codacy-maven-plugin.version>
     <graphql-java.version>13.0</graphql-java.version>
-    <minimum.code.covarage>0.9</minimum.code.covarage>
     <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+    <junit.jupiter.version>5.6.2</junit.jupiter.version>
+    <minimum.code.covarage>0.96</minimum.code.covarage>
   </properties>
 
   <dependencies>
@@ -116,6 +118,21 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>com.gavinmogan</groupId>
+        <artifactId>codacy-maven-plugin</artifactId>
+        <version>${codacy-maven-plugin.version}</version>
+        <configuration>
+          <!--suppress UnresolvedMavenProperty -->
+          <apiToken>${env.CODACY_PROJECT_TOKEN}</apiToken>
+          <!--suppress UnresolvedMavenProperty -->
+          <projectToken>${env.CODACY_PROJECT_TOKEN}</projectToken>
+          <coverageReportFile>target/site/jacoco/jacoco.xml</coverageReportFile>
+          <codacyApiBaseUrl>https://api.codacy.com</codacyApiBaseUrl>
+          <failOnMissingReportFile>false</failOnMissingReportFile>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 </project>
