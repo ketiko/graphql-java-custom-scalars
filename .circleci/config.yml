@@ -21,23 +21,31 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-all-{{ checksum "pom.xml" }}
-            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v2-dependencies-{{ checksum "pom.xml" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - v2-dependencies-
 
       - run:
           name: Install dependencies
           command: ./mvnw dependency:go-offline
-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
-
-      # run tests!
-      - run: ./mvnw test
-
+      - run:
+          name: compile
+          command: ./mvnw clean compile
+      - run:
+          name: fmt:check
+          command: ./mvnw fmt:check
+      - run:
+          name: checkstyle:check
+          command: ./mvnw checkstyle:check
+      - run:
+          name: spotbugs:check
+          command: ./mvnw spotbugs:check
+      - run:
+          name: pmd:check
+          command: ./mvnw pmd:check
+      - run:
+          name: test
+          command: ./mvnw test
       - run:
           name: Upload Code Coverage
           command: ./mvnw codacy:coverage
@@ -45,7 +53,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: v1-dependencies-all-{{ checksum "pom.xml" }}
+          key: v2-dependencies-{{ checksum "pom.xml" }}
 
       - store_test_results:
           path: target/surefire-reports
