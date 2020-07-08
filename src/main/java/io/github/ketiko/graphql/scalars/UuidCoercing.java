@@ -7,16 +7,9 @@ import graphql.schema.CoercingParseValueException;
 import graphql.schema.CoercingSerializeException;
 import java.util.UUID;
 
-/**
- *
- */
+/** Access this via {@link io.github.ketiko.graphql.scalars.CustomScalars#Uuid} */
 public class UuidCoercing implements Coercing<UUID, String> {
 
-  /**
-   * @param input
-   * @return
-   * @throws CoercingSerializeException
-   */
   @Override
   public String serialize(Object input) throws CoercingSerializeException {
     if (input instanceof String) {
@@ -36,11 +29,6 @@ public class UuidCoercing implements Coercing<UUID, String> {
     }
   }
 
-  /**
-   * @param input
-   * @return
-   * @throws CoercingParseValueException
-   */
   @Override
   public UUID parseValue(Object input) throws CoercingParseValueException {
     if (input instanceof String) {
@@ -58,11 +46,6 @@ public class UuidCoercing implements Coercing<UUID, String> {
     }
   }
 
-  /**
-   * @param input
-   * @return
-   * @throws CoercingParseLiteralException
-   */
   @Override
   public UUID parseLiteral(Object input) throws CoercingParseLiteralException {
     if (!(input instanceof StringValue)) {
@@ -80,8 +63,10 @@ public class UuidCoercing implements Coercing<UUID, String> {
   }
 
   /**
-   * @param input
-   * @return
+   * This creates a readable name for an object type that failed to coerce into a UUID.
+   *
+   * @param input is the input object to coerce.
+   * @return a name describing the input object class
    */
   private static String typeName(Object input) {
     if (input == null) {
