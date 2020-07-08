@@ -62,7 +62,7 @@
     <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <spotbugs-maven-plugin.version>4.0.4</spotbugs-maven-plugin.version>
-    <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
   </properties>
 
   <dependencies>
