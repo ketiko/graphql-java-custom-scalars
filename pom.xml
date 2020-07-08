@@ -10,9 +10,9 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>graphql-java-custom-scalars</name>
+  <name>${project.groupId}:${project.artifactId}</name>
   <url>https://github.com/ketiko/graphql-java-custom-scalars</url>
-  <description>Custom Graphql scalars for the graphql-java library.</description>
+  <description>Additional custom Graphql scalars for the graphql-java library.</description>
 
   <licenses>
     <license>
