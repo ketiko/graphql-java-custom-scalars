@@ -38,7 +38,16 @@ jobs:
       # run tests!
       - run: ./mvnw test
 
+      - run:
+          name: Upload Code Coverage
+          command: ./mvnw codacy:coverage
+
       - save_cache:
           paths:
             - ~/.m2
           key: v1-dependencies-all-{{ checksum "pom.xml" }}
+
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/site/jacoco
