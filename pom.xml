@@ -7,7 +7,7 @@
 
   <groupId>io.github.ketiko</groupId>
   <artifactId>graphql-java-custom-scalars</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
 
   <name>graphql-java-custom-scalars</name>
   <url>https://github.com/ketiko/graphql-java-custom-scalars</url>
