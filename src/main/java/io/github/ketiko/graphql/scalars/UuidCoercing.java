@@ -7,7 +7,16 @@ import graphql.schema.CoercingParseValueException;
 import graphql.schema.CoercingSerializeException;
 import java.util.UUID;
 
+/**
+ *
+ */
 public class UuidCoercing implements Coercing<UUID, String> {
+
+  /**
+   * @param input
+   * @return
+   * @throws CoercingSerializeException
+   */
   @Override
   public String serialize(Object input) throws CoercingSerializeException {
     if (input instanceof String) {
@@ -27,6 +36,11 @@ public class UuidCoercing implements Coercing<UUID, String> {
     }
   }
 
+  /**
+   * @param input
+   * @return
+   * @throws CoercingParseValueException
+   */
   @Override
   public UUID parseValue(Object input) throws CoercingParseValueException {
     if (input instanceof String) {
@@ -44,6 +58,11 @@ public class UuidCoercing implements Coercing<UUID, String> {
     }
   }
 
+  /**
+   * @param input
+   * @return
+   * @throws CoercingParseLiteralException
+   */
   @Override
   public UUID parseLiteral(Object input) throws CoercingParseLiteralException {
     if (!(input instanceof StringValue)) {
@@ -60,6 +79,10 @@ public class UuidCoercing implements Coercing<UUID, String> {
     }
   }
 
+  /**
+   * @param input
+   * @return
+   */
   private static String typeName(Object input) {
     if (input == null) {
       return "null";
