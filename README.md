@@ -10,3 +10,22 @@ The https://github.com/graphql-java/graphql-java-extended-scalars project alread
 However they do not have a UUID scalar yet. There is a PR to add one, https://github.com/graphql-java/graphql-java-extended-scalars/pull/18.
 
 This project add more scalars not found in either of these projects.
+
+### Usage
+
+First, register the scalar as a bean.
+```java
+  // GraphqlConfig
+
+  @Bean
+  public GraphQLScalarType registerUuidScalar() {
+    return CustomScalars.Uuid;
+  }
+```
+
+Second, include the scalar in your graphql schema file.
+```graphql
+# schema.graphqls
+
+scalar UUID
+```
