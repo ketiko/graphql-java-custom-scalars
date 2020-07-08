@@ -4,6 +4,9 @@
 
 ## Custom Graphql Scalars for Java
 
-This add a UUID scalar. I recommend using https://github.com/graphql-java/graphql-java-extended-scalars, which has a number of custom scalars.
+This adds some custom Graphql scalars not found in the standard https://github.com/graphql-java/graphql-java library.
+
+The https://github.com/graphql-java/graphql-java-extended-scalars project already adds many custom scalars.
 However they do not have a UUID scalar yet. There is a PR to add one, https://github.com/graphql-java/graphql-java-extended-scalars/pull/18.
-But until they do, I've made this project for now.
+
+This project add more scalars not found in either of these projects.
