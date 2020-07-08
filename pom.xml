@@ -8,9 +8,32 @@
   <groupId>io.github.ketiko</groupId>
   <artifactId>graphql-java-custom-scalars</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>graphql-java-custom-scalars</name>
   <url>https://github.com/ketiko/graphql-java-custom-scalars</url>
+  <description>Custom Graphql scalars for the java-graphql library.</description>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Ryan Hansen</name>
+      <email>ketiko@gmail.com</email>
+      <url>https://github.com/ketiko</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/ketiko/graphql-java-custom-scalars.git</connection>
+    <developerConnection>scm:git:ssh://github.com:ketiko/graphql-java-custom-scalars.git</developerConnection>
+    <url>http://github.com/ketiko/graphql-java-custom-scalars/tree/master</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
