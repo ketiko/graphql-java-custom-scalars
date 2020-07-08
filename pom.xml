@@ -35,6 +35,17 @@
     <url>http://github.com/ketiko/graphql-java-custom-scalars/tree/master</url>
   </scm>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -51,6 +62,7 @@
     <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
     <spotbugs-maven-plugin.version>4.0.4</spotbugs-maven-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -228,6 +240,31 @@
             <id>attach-javadocs</id>
             <goals>
               <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>${nexus-staging-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>false</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
             </goals>
           </execution>
         </executions>
