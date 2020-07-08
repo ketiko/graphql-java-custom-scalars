@@ -8,7 +8,8 @@ import graphql.schema.CoercingSerializeException;
 import java.util.UUID;
 
 /**
- * Access this via {@link io.github.ketiko.graphql.scalars.CustomScalars#Uuid}.
+ * Access this via {@link io.github.ketiko.graphql.scalars.CustomScalars#Uuid}. It is not to be
+ * used directly.
  *  */
 public class UuidCoercing implements Coercing<UUID, String> {
 
