@@ -159,9 +159,6 @@
         <version>${maven-pmd-plugin.version}</version>
         <configuration>
           <verbose>true</verbose>
-          <excludes>
-            <exclude>**/avro/**/*.java</exclude>
-          </excludes>
         </configuration>
       </plugin>
       <plugin>
