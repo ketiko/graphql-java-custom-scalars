@@ -54,7 +54,7 @@
 
     <codacy-maven-plugin.version>1.2.0</codacy-maven-plugin.version>
     <fmt-maven-plugin.version>2.10</fmt-maven-plugin.version>
-    <graphql-java.version>13.0</graphql-java.version>
+    <graphql-java.version>17.4</graphql-java.version>
     <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
     <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
